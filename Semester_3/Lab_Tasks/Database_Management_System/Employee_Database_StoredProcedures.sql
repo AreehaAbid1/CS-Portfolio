@@ -1,0 +1,107 @@
+CREATE DATABASE EMP_DBS;
+GO
+
+USE EMP_DBS;
+GO
+
+CREATE TABLE EMP_1
+(
+    EMPNO INT,
+    ENAME VARCHAR(15),
+    SAL INT,
+    JOB VARCHAR(15),
+    MGR INT,
+    HIREDATE DATE,
+    COMM INT,
+    DEPTNO INT
+);
+
+INSERT INTO EMP_1 VALUES
+(7369, 'SMITH', 800, 'CLERK', 7902, '1980-12-17', NULL, 20),
+(7499, 'ALLE', 1600, 'SALESMAN', 7698, '1981-05-20', 300, 30),
+(7521, 'WARD', 1250, 'SALESMAN', 7698, '1981-05-22', 500, 30),
+(7566, 'JONES', 2975, 'MANAGER', 7839, '1981-04-02', NULL, 20),
+(7654, 'MARTI', 1250, 'SALESMAN', 7698, '1981-09-28', 1400, 30),
+(7698, 'BLAKE', 2850, 'MANAGER', 7839, '1981-05-01', NULL, 30),
+(7782, 'CLARK', 2450, 'MANAGER', 7839, '1981-06-09', NULL, 10),
+(7788, 'SCOTT', 3000, 'ANALYST', 7566, '1982-12-09', NULL, 20),
+(7839, 'KING', 5000, 'PRESIDENT', NULL, '1981-11-17', 1660, 10),
+(7844, 'TURNER', 1500, 'SALESMAN', 7698, '1981-09-08', 0, 30),
+(7876, 'ADAMS', 1100, 'CLERK', 7788, '1983-01-12', NULL, 20),
+(7900, 'JAMES', 950, 'CLERK', 7698, '1981-12-03', NULL, 30),
+(7902, 'FORD', 3000, 'ANALYST', 7566, '1981-12-03', NULL, 20),
+(7934, 'MILLER', 1300, 'CLERK', 7782, '1982-01-23', NULL, 10);
+
+CREATE TABLE EMP_2
+(
+    EMPNO INT,
+    ENAME VARCHAR(15),
+    SAL INT,
+    Gender VARCHAR(10),
+    StateCode VARCHAR(20)
+);
+
+INSERT INTO EMP_2 VALUES
+(201, 'Jerome', 83000, 'M', 'FL'),
+(202, 'Ray', 88000, 'M', 'AL'),
+(203, 'Stella', 76000, 'F', 'AL'),
+(204, 'Gilbert', 42000, 'M', 'Ar'),
+(205, 'Edward', 93000, 'M', 'FL'),
+(206, 'Ernest', 64000, 'F', 'Al'),
+(207, 'Jorge', 75000, 'F', 'I'),
+(208, 'Nicholas', 71000, 'F', 'Ge'),
+(209, 'Lawrence', 95000, 'M', 'I'),
+(210, 'Salvador', 75000, 'M', 'Co');
+
+--task 1
+CREATE PROCEDURE Emp_proc1
+AS
+BEGIN
+    SELECT *
+    FROM EMP_1
+    WHERE JOB = 'SALESMAN';
+END;
+GO
+EXEC Emp_proc1;
+GO
+
+--task 2
+CREATE PROCEDURE Emp_proc2
+AS
+BEGIN
+    SELECT *
+    FROM EMP_1
+    WHERE SAL > 1000 AND SAL < 3000;
+END;
+GO
+EXEC Emp_proc2;
+GO
+
+--task 3
+CREATE PROCEDURE Emp_proc3
+    @Gender VARCHAR(10)
+AS
+BEGIN
+    SELECT *
+    FROM EMP_2
+    WHERE Gender = @Gender;
+END;
+GO
+EXEC Emp_proc3 'M';
+GO
+
+--task 4
+ALTER PROCEDURE Emp_proc1
+AS
+BEGIN
+    SELECT ENAME
+    FROM EMP_1;
+END;
+GO
+EXEC Emp_proc1;
+GO
+
+--task 5
+DROP PROCEDURE Emp_proc2;
+DROP PROCEDURE Emp_proc3;
+GO
