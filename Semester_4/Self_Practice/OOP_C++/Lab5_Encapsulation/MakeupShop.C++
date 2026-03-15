@@ -1,23 +1,3 @@
-/* 
-MAKEUP SHOP MANAGEMENT SYSTEM
-
-A makeup shop sells different products like lipsticks, foundations, and eyeliners. 
-Each product has a name, price, and available quantity. Customers can buy and restock products, 
-and the system should update the product price dynamically based on demand.  
-
-Create a Makeup class with private attributes for:
-- Product name
-- Product price
-- Available quantity
-
-The class should:
-- Have setters and getters to handle price and quantity safely.
-- Have a static data member to track the total value of all makeup products in the shop.
-
-The program should allow customers to buy or restock products, 
-updating the product quantity and price, and also show how the 
-total shop value changes dynamically.
-*/
  #include<iostream>
  #include<string>
  using namespace std;
