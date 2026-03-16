@@ -1,8 +1,3 @@
-// 4.	Start with the publication, book, and tape classes from the previous exercise. Now, you want to add the
-// date of publication for both books and tapes. Derive a new class publication2 from publication, and add a
-// date member to it. Update the book and tape classes so they inherit from publication2 instead of publication.
-// Modify the getdata() and putdata() functions to include the date. Use a Date class that stores a date as three
-// integers: day, month, and year.
 #include<iostream>
 #include<string>
 using namespace std;
