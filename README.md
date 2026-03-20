@@ -15,3 +15,8 @@ C | C++ | Java | SQL | Assembly | Cisco Packet Tracer
 
 ## 🌱 Currently Learning
 Python | Data Structures & Algorithms
+
+## 🔗 Connect
+
+- LinkedIn: [Areeha Abid](https://linkedin.com/in/areeha-abid)
+- GitHub: [AreehaAbid1](https://github.com/AreehaAbid1)
